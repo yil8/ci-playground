@@ -20,6 +20,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      # Setup SSH keys to clone private repos
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
       # Setup Python
       - name: Setup Python 3.9
         uses: actions/setup-python@v3
