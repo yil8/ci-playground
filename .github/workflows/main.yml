@@ -43,7 +43,7 @@ jobs:
           source embree-2.17.7.x86_64.linux/embree-vars.sh
           git clone https://github.com/scopatz/pyembree.git
           cd pyembree
-          pip install Cython
+          pip install numpy Cython
           pip install .
           cd ..
 
