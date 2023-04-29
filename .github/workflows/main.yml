@@ -43,7 +43,7 @@ jobs:
           source embree-2.17.7.x86_64.linux/embree-vars.sh
           git clone https://github.com/scopatz/pyembree.git
           cd pyembree
-          pip install numpy Cython
+          pip install numpy Cython wheel
           export SETUPTOOLS_SCM_PRETEND_VERSION=0.0.0
           export PIP_USE_PEP517=0
           pip install . --no-build-isolation
