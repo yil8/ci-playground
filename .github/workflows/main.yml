@@ -41,8 +41,7 @@ jobs:
           wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.7.x86_64.linux.tar.gz
           tar -xzvf embree-2.17.7.x86_64.linux.tar.gz
           source embree-2.17.7.x86_64.linux/embree-vars.sh
-          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
-          echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64' >> ~/.bashrc
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/embree-2.17.7.x86_64.linux/lib
           git clone https://github.com/scopatz/pyembree.git
           cd pyembree
           pip install numpy Cython wheel
@@ -54,6 +53,5 @@ jobs:
       # Run Pytest
       - name: Run Pytest
         run: |
-          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
           pytest --timeout 60
 
