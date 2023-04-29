@@ -42,11 +42,11 @@ jobs:
           tar -xzvf embree-2.17.7.x86_64.linux.tar.gz
           source embree-2.17.7.x86_64.linux/embree-vars.sh
           git clone https://github.com/scopatz/pyembree.git
-          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
-          echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64' >> ~/.bashrc
           cd pyembree
           pip install numpy Cython
-          pip install .
+          export SETUPTOOLS_SCM_PRETEND_VERSION=0.0.0
+          export PIP_USE_PEP517=0
+          pip install . --no-build-isolation
           cd ..
 
       # Run Pytest
