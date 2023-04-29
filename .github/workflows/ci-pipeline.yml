@@ -43,7 +43,5 @@ jobs:
       # ===============================
       - name: Run Pytest
         run: |
-          pip install pytest
-          pip install pytest-timeout
           pytest --timeout 60
 

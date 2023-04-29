@@ -1,0 +1,3 @@
+trimesh
+pytest
+pytest-timeout
