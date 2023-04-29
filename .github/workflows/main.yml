@@ -54,5 +54,6 @@ jobs:
       # Run Pytest
       - name: Run Pytest
         run: |
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
           pytest --timeout 60
 
